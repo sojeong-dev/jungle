@@ -6,6 +6,10 @@
     <title>html</title>
 		<link rel="stylesheet" href="css/reset.css">
 		<style>
+			.wrap {
+				width: 1024px;
+				margin: 0 auto;
+			}
 			body, h1{margin:0}
 			a{color:#fff}
 
@@ -14,6 +18,48 @@
 				color:#fff;
 				padding:20px;
 			}
+			.container {
+				display: flex;
+				height: 300px;
+			}
+			.container .section {
+				background: cyan;
+				flex: 1;
+			}
+			.container .aside {
+				background: darkgray;
+				width: 200px;
+			}
+			.footer {
+				height: 50px;
+				background: #666;
+			}
+
+			@media all and (max-width: 1024px) {
+				.wrap {
+					width: 640px;
+				}
+				.container .aside {
+					width: 130px;
+				}
+			}
+			@media all and (max-width: 640px) {
+				.wrap {
+					width: auto;
+				}
+				.container {
+					display: initial; /* flex초기화 */
+					height: auto;
+				}
+				.container .section {
+					height: 300px;
+				}
+				.container .aside {
+					height: 100px;
+					width: auto;
+				}
+			}
+
 		</style>
 
   </head>
