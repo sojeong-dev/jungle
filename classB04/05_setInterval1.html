@@ -9,12 +9,14 @@
 		<script>
 			$(function() {
 				var currentNum = 0;
+				var totalNum = $(".visual .unit").length;	//3	//갯수 늘어나건 줄어들건 동적으로
+
 				setInterval(function() {
 					$(".visual .unit").removeClass("on");
 					$(".visual .unit").eq(currentNum).addClass("on");
 					currentNum++;
 					
-					if(currentNum == 2) {
+					if(currentNum == totalNum) {	//동적
 						currentNum = 0;
 					}
 				},2000)
@@ -76,6 +78,16 @@
 						<strong class="txt_tit">두번째 문구</strong>
 						<p class="txt_subs_1">두번째 문구의 애니메이션 예제 입니다.</p>
 						<p class="txt_subs_2">두번째 문구의 애니메이션 예제 입니다.</p>
+					</div>
+					<div class="unit">
+						<strong class="txt_tit">세번째 문구</strong>
+						<p class="txt_subs_1">세번째 문구의 애니메이션 예제 입니다.</p>
+						<p class="txt_subs_2">세번째 문구의 애니메이션 예제 입니다.</p>
+					</div>
+					<div class="unit">
+						<strong class="txt_tit">네번째 문구</strong>
+						<p class="txt_subs_1">네번째 문구의 애니메이션 예제 입니다.</p>
+						<p class="txt_subs_2">네번째 문구의 애니메이션 예제 입니다.</p>
 					</div>
 				</div>
 				
