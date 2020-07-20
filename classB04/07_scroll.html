@@ -4,16 +4,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
-		<link href="css/reset.css" rel="stylesheet" type="text/css" />
-    
-		<style>
-			.wrap{padding:50px;text-align:center;}
-			.wrap .box{height:2000px; background:#da56be;}
-			.wrap .btn_top{width:100px; height:100px; line-height:100px;  display:block; background:#5697da; position:fixed; bottom:10px; right:10px; color:#fff; font-weight:bold; font-size:20px; text-align:center; border:0}
-		</style>
-		<script>
-
-		</script>
+	<link href="css/reset.css" rel="stylesheet" type="text/css" />
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<style>
+		.wrap{padding:50px;text-align:center;}
+		.wrap .box{height:2000px; background:#da56be;}
+		.wrap .btn_top{width:100px; height:100px; line-height:100px;  display:block; background:#5697da; position:fixed; bottom:10px; right:10px; color:#fff; font-weight:bold; font-size:20px; text-align:center; border:0}
+	</style>
+	<script>
+		/*
+		$(function() {
+			$(window).scroll(function() {
+				console.log($("html").scrollTop());	//수직 위치 출력
+			})
+		})
+		*/
+		//--------------------------------
+		$(function() {
+			$(".btn_top").click(function() {
+				//$("html").scrollTop(0);	//처음 상단으로 올림
+				//=> scrollTop(): 선택한 요소의 수직위치을 알아내거나 특정값으로 이동시킴
+				
+				$("html").animate({
+					"scrollTop": 0
+				},1000)	//부드럽게
+			})
+		})
+	</script>
   </head>
   <body>
     <div class="wrap">

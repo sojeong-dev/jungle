@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width">
 	<title>html</title>
 	<link href="css/reset.css" rel="stylesheet" type="text/css" />
-	
+	<script src="js/jquery-1.8.3.min.js"></script>
 	<script>
 		$(function(){
-			
+			$(".arrcordion > ul > li > a").click(function() {
+				console.log("click");
+				$(this).next().slideToggle();
+			})
 		})
 	</script>
 		<style>
@@ -52,12 +55,7 @@
 				padding:20px;
 				margin: 0;
 			}
-			.arrcordion > ul > li:hover .subs{
-				height:300px;
-			}
-			.arrcordion > ul > li:hover > a:after{
-				transform: rotate(180deg);
-			}
+			
 		</style>
 
   </head>
