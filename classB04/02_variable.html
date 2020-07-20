@@ -5,7 +5,34 @@
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
 		<script>
-			
+      var a = 1;
+      a++;
+      console.log(a); //2
+      
+      var a = "가나다";
+      var b = "라마바";
+      console.log(a + b); //가나다라마바
+      
+      var a = 100;
+      var b = "50";
+      console.log(a + b); //10050
+
+      var a = true;
+      var b = false;
+      console.log(a + b); //1
+      //=> 변수: 특정 값(data)를 담는 그릇
+
+      var arr1 = [];  //배열
+      arr1.push(20);  //배열에 값 추가  //맨 뒤에 추가됨
+      console.log(arr1[0]);  //20
+
+      var arr2 = [1,"가",10];
+      console.log(arr2);  //[1, "가", 10]
+      console.log(arr2.length); //3 //배열의 길이
+      arr2.push("나");
+      console.log(arr2);  //[1, "가", 10, "나"]
+      //=> 배열: 연속적인 공간에 다수 값(data)를 담음
+
 		</script>
   </head>
   <body>

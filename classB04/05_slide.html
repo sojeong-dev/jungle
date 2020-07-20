@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
 		<link href="css/reset.css" rel="stylesheet" type="text/css" />
-    
+    <script src="js/jquery-1.8.3.min.js"></script>	
 		<style>
 			.wrap{padding:50px;text-align:center;}
-			.wrap .box{height:200px; background:#da56be;}
+			.wrap .box{height:200px; background:#da56be; width: 100%;}
 		</style>
 		<script>
-
+      $(function() {
+        // $(".box").slideUp(10000);  //서서히 없어짐(올라감) //10초 = 10000
+        $(".box").slideDown(10000); //서서히 열림(내려감) (display: none일때)  
+        //=> 메뉴多
+      })
 		</script>
   </head>
   <body>
     <div class="wrap">
-			<div class="box"></div>
+			<div class="box" style="display: none;"></div>
     </div>
   </body>
 </html>

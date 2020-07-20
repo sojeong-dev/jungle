@@ -5,13 +5,40 @@
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
 		<link href="css/reset.css" rel="stylesheet" type="text/css" />
-    
+		<!-- jquery사용하기 위해서 먼저 js파일 연결해줘야 -->
+		<script src="js/jquery-1.8.3.min.js"></script>	
+	
 		<style>
 			.wrap{padding:50px 0;text-align:center;}
 			.wrap .btn{display:inline-block; width:100px; height:100px; line-height:100px; background:#eee;}
+			.wrap .btn.on {border: 3px solid #ff0000;}
 		</style>
 		<script>
+			$(function() {	//$: jquery (기능, 이벤트 등)실행
+				console.log($(".btn").length);	//4	
+			})
+			//=> jquery: load complete > 먼저 써도 자바스크립트 엔진이 문서를 끝까지 다 읽고 실행됨
 
+			//--------------------------------
+			$(function() {	//inline-style로 css추가 가능
+				$(".btn").find('span').css({"border": "3px solid #00ff00", "background" : "#0000ff"});
+				//eq(2): 0-base ≒ nth-child()
+				//next(): (동등한 depth 중)다음
+				//prev(): (동등한 depth 중)이전
+				//parent(): 부모
+				//find('span'): 태그 찾기
+
+				//=> 메소드: 간략하게 만든 기능
+			})
+
+			//--------------------------------
+			$(function() {
+				$(".btn").addClass("on");	//class추가
+				$(".btn").eq(1).removeClass("on");	//class삭제
+				$(".btn").eq(2).toggleClass("on");	//class 추가/삭제 ≒스위치
+				$(".btn").eq(2).toggleClass("on");
+			})
+			
 		</script>
   </head>
   <body>

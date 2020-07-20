@@ -6,7 +6,31 @@
     <title>repl.it</title>
 		<link href="css/reset.css" rel="stylesheet" type="text/css" />
 		<script>
-			
+			function sample() { //함수 
+        console.log("가나다");
+      }
+      
+      sample(); //함수실행  //가나다
+      sample();
+      //=> 함수: 로직 재사용 가능
+
+      //--------------------------------
+      var a = 10;
+      var b = 9;
+      b++; 
+      console.log(a > b); 
+      
+      if(a > b) {  //참(true)이면 실행
+        console.log("참일 경우 실행");
+      } else {  //거짓(false)이면 실행
+        console.log("거짓일 경우 실행");
+      }
+
+      //--------------------------------
+      for(var i = 0; i < 5; i++) {  //선언 및 초기화, (반복할)조건, 증감부
+        console.log(i); //0 //1 //2 //3 //4
+      }
+      
 		</script>
   </head>
   <body>
