@@ -13,7 +13,28 @@
 		<script>
 			
 			$(function(){
-				
+				var completeData;
+				$.ajax({
+					url: "js/data.json",
+					dataType: 'json', 
+					success: function(result) {
+						completeData = result.seatInfo;
+						// console.log(result.seatInfo[0].name);	//json데이터를 append되기전에 "파싱"해서 가져옴
+						
+						init();	//초기화 함수 실행
+					}
+				})
+
+				function init() {
+					// console.log(completeData.length);	//11
+					for(var i = 0; i < completeData.length; i++) {
+						var name = completeData[i].name;	//선택해서 가져옴 == 파싱
+						var price = completeData[i].price;
+						// console.log(name);
+						
+						$(".section.list > ul").append("<li class='unit'><a href='javascript:' data-price='" + price + "'>" + name + "</a></li>");
+					}
+				}
 			})
 		</script>
 
@@ -21,24 +42,28 @@
   <body>
     <div class="wrap">
 
-			<div class="header">
+		<div class="header">
 			<h1>logo</h1>
 			<div class="nav">
 				<a href="#">menu1</a>
 				<a href="#">menu2</a>
 				<a href="#">menu3</a>
 			</div>
-    </div>
+		</div>
 		<div class="container">
-				<!--<div class="box_btn">
-					<button class="btn_setting">자리셋팅</button>
-				</div>-->
-				
-    </div>
+			<!--<div class="box_btn">
+				<button class="btn_setting">자리셋팅</button>
+			</div>-->
+			<div class="section list">
+				<ul>
+					<!-- 들어갈 자리 -->
+				</ul>
+			</div>
+    	</div>
 		<div class="footer">
 			footer
 		</div>
 
-		
+	</div>
   </body>
 </html>

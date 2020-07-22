@@ -11,30 +11,60 @@
 			
 		</style>
 		<script>
+			
 			$(function(){
-
+			/*	for(var i = 0; i < 100; i++) {
+					$(".section.list > ul").append("<li class='unit'><a href='javascript:'>버튼" + (i+1) + "</a></li>");
+				} 
+			*/
+			var addNum = 0;
+			$(".btn_add").click(function() {
+				$(".section.list > ul").append("<li class='unit'><a href='javascript:'>버튼" + (++addNum) + "</a></li>");
+				})
 			})
+
 		</script>
 
   </head>
   <body>
     <div class="wrap">
-
-			<div class="header">
-			<h1>logo</h1>
-			<div class="nav">
-				<a href="#">menu1</a>
-				<a href="#">menu2</a>
-				<a href="#">menu3</a>
-			</div>
-    </div>
+		<div class="header">
+		<h1>logo</h1>
+		<div class="nav">
+			<a href="#">menu1</a>
+			<a href="#">menu2</a>
+			<a href="#">menu3</a>
+		</div>
+		</div>
 		<div class="container">
-				
-    </div>
+			<div class="box_btn">
+				<button class="btn_add">버튼추가</button>
+			</div>
+			<div class="section list">
+				<ul>
+					<!-- 동적으로 추가되게-->
+					<!-- <li class="unit">
+						<a href="javascript:">버튼1</a>
+					</li>
+					<li class="unit">
+						<a href="javascript:">버튼2</a>
+					</li>
+					<li class="unit">
+						<a href="javascript:">버튼3</a>
+					</li>
+					<li class="unit">
+						<a href="javascript:">버튼4</a>
+					</li>
+					<li class="unit">
+						<a href="javascript:">버튼5</a>
+					</li> -->
+				</ul>
+			</div>
+		</div>
 		<div class="footer">
 			footer
 		</div>
 
-		
+	</div>
   </body>
 </html>

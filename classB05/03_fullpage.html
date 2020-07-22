@@ -12,15 +12,32 @@
 		
 		<script>
 			$(function(){
-			
+				$("#fullpage").fullpage( {
+					navigation: true,
+					sectionsColor: ["#999", "#4bbfc3", "#4B81B9", "#75A797"],
+					navigationPosition: "left",
+					navigationTooltips: ["1번", "2번", "3번", "4번"],
+					showActiveTooltip: true
+				});
 			})
 		</script>
 		<style>
-			
+			.section {
+				text-align: center;
+				font-size: 50px;
+				font-weight: bold;
+				color: #fff;
+				text-shadow: 2px 2px 5px rgba(0,0,0,.3);
+			}
 		</style>
 
   </head>
   <body>
-    
+    <div id="fullpage">
+		<div class="section">Some section</div>
+		<div class="section">Some section</div>
+		<div class="section">Some section</div>
+		<div class="section">Some section</div>
+	</div>
   </body>
 </html>

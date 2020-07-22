@@ -10,7 +10,29 @@
 		
 		<script>
 			$(function(){
-				
+				var countNum = 0;	//현재 카운트 변수
+				var intervalVar; 
+
+				//시작 버튼 이벤트
+				$(".btn_start").click(function() {
+					clearInterval(intervalVar);
+					intervalVar = setInterval(function() {
+						countNum++;
+						$('.txt_Number').text(countNum);
+					},1000);
+				})
+
+				//스톱 버튼 이벤트
+				$(".btn_stop").click(function() {
+					clearInterval(intervalVar);
+				})
+
+				//리셋 버튼 이벤트
+				$(".btn_reset").click(function() {
+					clearInterval(intervalVar);
+					countNum = 0;
+					$('.txt_Number').text(countNum);
+				})
 			})
 		</script>
 
