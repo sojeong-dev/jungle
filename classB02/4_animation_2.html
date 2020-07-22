@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>html</title>
+		<style>
+			body, h1{margin:0}
+			a{color:#fff}
+
+			.header{
+				background:#333;
+				color:#fff;
+				padding:20px;
+			}
+
+			.visual {
+				text-align: center;
+				margin-top: 50px;
+				position: relative;
+			}
+			.visual .unit {
+				animation: key_1 10s infinite; /* 애니메이션명 애니메이션이 총 걸릴 시간 */
+				/* infinite: 무한반복 */
+				opacity: 0;
+				position: absolute;
+				top: 30px;
+				left: 0;
+				width: 100%;
+			}
+			.visual .unit:nth-child(2) {
+				animation-name: key_2;
+				opacity: 0;
+			}
+			.visual .unit .txt_tit {
+				font-size: 50px;
+			}
+			.visual .unit .txt_subs_1 {
+				font-size: 30px;
+			}
+
+			/* animation은 transition과 달리 hover같은 트리거 필요없이 key-frame을 만들어 시간차(%줘)에 따라 애니메이션이 일어나게 */
+
+			/* 나타났다 사라지게 > 두 keyframes 교차되서 나오게 */
+			@keyframes key_1 { /* 0~50% > txt_tit가 늘어나면 그에 따라 퍼센트 바꿔줘야 */
+				0% {opacity: 0; top: 30px;}
+				10% {opacity: 1; top: 0;} /* 투명도 100% = 1 */
+				40% {opacity: 1; top: 0}
+				50% {opacity: 0; top: 30px;}
+			}
+			@keyframes key_2 { /* 50%~100% */
+				50% {opacity: 0; top: 30px;}
+				60% {opacity: 1; top: 0;} 
+				90% {opacity: 1; top: 0;}
+				100% {opacity: 0; top: 30px;}
+			}
+
+		</style>
+
+  </head>
+  <body>
+    <div class="header">
+			<h1>logo</h1>
+			<div class="nav">
+				<a href="#">menu1</a>
+				<a href="#">menu2</a>
+				<a href="#">menu3</a>
+			</div>
+    </div>
+		<div class="container">
+				<div class="section visual">
+					<div class="unit">
+						<strong class="txt_tit">첫번째 문구</strong>
+						<p class="txt_subs_1">첫번째 문구의 애니메이션 예제 입니다.</p>
+						<p class="txt_subs_2">첫번째 문구의 애니메이션 예제 입니다.</p>
+					</div>
+					<div class="unit">
+						<strong class="txt_tit">두번째 문구</strong>
+						<p class="txt_subs_1">두번째 문구의 애니메이션 예제 입니다.</p>
+						<p class="txt_subs_2">두번째 문구의 애니메이션 예제 입니다.</p>
+					</div>
+				</div>
+				
+		</div>
+  </body>
+</html>

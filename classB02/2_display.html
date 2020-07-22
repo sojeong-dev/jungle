@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>html</title>
+		<style>
+			body, h1{margin:0}
+			a{color:#fff}
+
+			.header{
+				background:#333;
+				color:#fff;
+				padding:20px;
+			}
+			.header > h1 {
+				float: left;
+			}
+			.header .nav {
+				float: right;
+				margin-top: 10px;
+			}
+			/* 클리어 처리 */
+			.header::after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+
+			/* 테이블 속성 활용 레이아웃 */
+			/* .container {
+				display: table;
+				width: 100%;
+			}
+			.container > div {
+				display: table-cell;
+			}
+			.container .aside {
+				width: 150px;
+				background: #bbb;
+			}
+			.container .section {
+				background: #999;
+			} */
+
+			/* flex 속성 활용 레이아웃 */
+			.container {
+				display: flex;
+			}
+			.container .aside {
+				width: 150px;
+				background: #bbb;
+			}
+			.container .section {
+				background: #eee;
+				flex: 1; /* 나머지 빈 공간을 꽉 채우게 */
+				padding: 20px;
+			}
+			.tb .row {
+				display: flex; /* 가로배치됨 */
+				border-bottom: 1px solid #bbb;
+			}
+			.tb .row:first-child {
+				border-top: 1px solid #bbb;
+			}
+			.tb .row .label {
+				width: 100px;
+				background: #ccc;
+				padding: 10px;
+			}
+			.tb .row .content {
+				background: #fff;
+				flex: 1; 
+				padding: 10px;
+			}
+			
+
+		</style>
+
+  </head>
+  <body>
+    <div class="header">
+			<h1>logo</h1>
+			<div class="nav">
+				<a href="#">menu1</a>
+				<a href="#">menu2</a>
+				<a href="#">menu3</a>
+			</div>
+    </div>
+		<div class="container">
+				<div class="aside"></div>
+				<div class="section">
+					<div class="tb">
+						<div class="row">
+							<div class="label">입력1</div>
+							<div class="content">
+								<input />
+							</div>
+						</div>
+						<div class="row">
+							<div class="label">입력2</div>
+							<div class="content">
+								<input />
+							</div>
+						</div>
+					</div>
+					<!-- a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br> -->
+				</div>
+		</div>
+  </body>
+</html>

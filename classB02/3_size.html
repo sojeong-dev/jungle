@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>html</title>
+		<style>
+			body, h1{margin:0}
+			
+			.wrap{width:750px; height:400px; background:#ccc}
+			.wrap .unit {
+				/* width: 50vw; 뷰포트 기준 */
+				/* widht: 50%; 부모(.wrap) 기준 */
+				/* vh/vw : 모바일 > nav 多 */
+
+				/* width: calc(100% / 2 + 10px); 
+				height: 100px;
+				background: #ff0000; */
+			}
+
+			.box_input {
+				width: 300px;
+				position: relative;
+				border: 1px solid #999;
+				background: #fff;
+			}
+			.box_input > input {
+				width: calc(100% - 50px);
+				background: transparent;
+				border: none;
+			}
+			.box_input > button {
+				width: 30px; 
+				height: 20px;
+				position: absolute;
+				right: 0;
+			}
+			
+		</style>
+
+  </head>
+  <body>
+    <div class="wrap">
+			<div class="unit">
+				<div class="box_input">
+					<input />
+					<button></button>
+				</div>
+			</div>
+		</div>
+  </body>
+</html>
