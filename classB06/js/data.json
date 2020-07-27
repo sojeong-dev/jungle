@@ -54,6 +54,16 @@
 			"name":"C1",
 			"price":"1000",
 			"reserve":"disabled"
+		},
+		{
+			"name":"C2",
+			"price":"15000",
+			"reserve":""
+		},
+		{
+			"name":"C3",
+			"price":"15000",
+			"reserve":""
 		}
 	]
 }

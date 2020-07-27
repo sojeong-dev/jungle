@@ -9,7 +9,7 @@
 	height:100px;
 	width:200px;
 	font-size:20px;
-	cursor: pointer;
+	cursor: pointer; /* button태그는 커서가 손가락표시로 바뀌지 않음 > 따로 설정해 줘야 */
 }
 
 .section.reservation{
@@ -112,4 +112,30 @@
 
 .section.complete .txt_price{
 	font-size:20px;
+}
+
+.section.complete .ico_complete {
+	height: 128px;
+	width: 128px;
+	margin: 0 auto 50px;
+	background: url(../img/ico_complete.png) no-repeat;
+}
+
+/* common */
+.hide {	/* 접근성 text 숨기기 */
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1;
+	height: 1;
+	overflow: hidden;
+	z-index: -1; /* 1px상자 있을 수 도 있으므로 우선순위 낮춤 */
+}
+
+.section.complete .btn_reset {
+	border: 0;
+	margin-top: 30px;
+	font-size: 16px;
+	border-radius: 4px;
+	padding: 10px 20px;
 }
