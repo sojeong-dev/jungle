@@ -17,6 +17,7 @@ body {
   padding: 10px;
   border-radius: 5px;
   overflow-y: auto;
+  overflow-x: hidden; /* 가로 스크롤 생기는 것 막아줌 */
 }
 
 .chat_wrap .item { /* 메시지 자연스럽게 나오게 */
@@ -65,7 +66,6 @@ body {
 .chat_wrap .item.mymsg {
   text-align: right;
   transform: translateX(10px);
-  overflow-x: hidden;
 }
 
 .chat_wrap .item.mymsg .box .time {
@@ -101,4 +101,17 @@ body {
 }
 .chat_wrap .txt_area input + input { /* 상대방 */
   margin-top: 5px;
+}
+
+/* mobile */
+@media all and (max-width: 768px) {
+  body, html {
+    /* mobile에서 정상적으로 높이 100%로 차게 */
+    padding: 0;
+    height: 100%; 
+  }
+  .chat_wrap {
+    /* height: 100vh; view port기준 100% > but) mobile에서 100vh사용하면 오류발생 > 위/아래 툴바까지 합쳐서 100% 높이 잡기 때문에 스크롤 생기게 되므로 > mobile에서 함부로 사용x */
+    box-sizing: border-box;
+  }
 }
