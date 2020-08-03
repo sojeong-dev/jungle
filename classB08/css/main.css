@@ -1,11 +1,27 @@
 /***** common *****/
-.container{}
+.container{
+  padding-bottom: 150px;
+}
 .container .inner{}
-.section{}
+.section{
+  position: relative;
+}
 
 /***** visual *****/
-.section.visual{}
-.section.visual:before{}
+.section.visual{
+  text-align: center;
+  height: 800px;
+}
+.section.visual::before{ /* bg */
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 520px;
+  background: #f89828;
+  z-index: -1;
+}
 .section.visual .bx-wrapper {}
 .section.visual .bx-wrapper .bx-viewport {}
 .section.visual .bx-wrapper .bx-controls-direction a {}
@@ -17,17 +33,63 @@
 
 /***** market *****/
 .section.market{}
-.section.market .txt_area h2{}
-.section.market .txt_area .subs{}
-.section.market .slide_area{}
-.section.market .slide_area h3{}
-.section.market .slide_area ul > li{}
-.section.market .slide_area ul > li .info{}
-.section.market .slide_area ul > li .info .name{}
-.section.market .slide_area ul > li .info .price{}
-.section.market .slide_area ul > li .info .price > strong{}
-.section.market .slide_area ul > li img{}
-.section.market .slide_area ul:after{}
+.section.market .txt_area h2{
+  width: 215px;
+  height: 105px;
+  margin: 0 auto;
+  background: url(../img/main/tit_market_ti.png) no-repeat center center;
+}
+.section.market .txt_area .subs{
+  text-align: center;
+  margin-top: 30px;
+  font-size: 20px;
+}
+.section.market .slide_area{
+  height: 353px;
+  background: url(../img/main/bg_market.png) no-repeat center center;
+  margin-top: 13px;
+}
+.section.market .slide_area h3{
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 50px;
+  position: absolute;
+  left: 60px;
+  top: 115px;
+}
+.section.market .slide_area ul > li{
+  height: 340px; /* bx-slider가 잡는 높이값 > ul이나 li가 높이값을 잡아주지 못하면 bx-slider가 납작해질 수 있음 */
+}
+.section.market .slide_area ul > li .info{
+  position: absolute;
+  left: 280px;
+  top: 147px;
+}
+.section.market .slide_area ul > li .info .name{
+  font-size: 30px;
+}
+.section.market .slide_area ul > li .info .price{
+  font-size: 20px;
+  margin-top: 16px;
+}
+.section.market .slide_area ul > li .info .price > strong{
+  font-size: 30px;
+}
+.section.market .slide_area ul > li img{
+  position: absolute;
+  right: 81px;
+  top: 20px;
+}
+.section.market .slide_area ul::after{ /* 디자인적인 요소 */
+  content: '';
+  display: block;
+  width: 174px;
+  height: 89px;
+  background: url(../img/main/img_market_best.png) no-repeat center center;
+  position: absolute;
+  bottom: -9px;
+  right: 234px;
+}
 .section.market .bx-wrapper .bx-viewport{}
 .section.market .bx-wrapper .bx-pager {}
 .section.market .bx-wrapper .bx-pager.bx-default-pager a {}
@@ -35,42 +97,226 @@
 
 /***** pick *****/
 .section.pick{}
-.section.pick .txt_area{}
-.section.pick .txt_area h2{}
-.section.pick .left_area{}
-.section.pick .left_area > img{}
-.section.pick .left_area .txt_area .name{}
-.section.pick .left_area .txt_area .name:after{}
-.section.pick .left_area .txt_area .subs{}
-.section.pick .left_area .btn_all{}
-.section.pick .left_area .btn_all:after{}
-.section.pick .right_area{}
-.section.pick .right_area > ul > li{}
-.section.pick .right_area > ul > li > a{}
-.section.pick .right_area > ul > li > a img{}
+.section.pick .txt_area{
+  margin-bottom: 69px;
+}
+.section.pick .txt_area h2{
+  width: 223px;
+  height: 74px;
+  background: url(../img/main/tit_month_pick_ti.png) no-repeat center center;
+  margin-left: -43px;
+}
+.section.pick .left_area{
+  float: left;
+  width: 630px;
+  height: 360px;
+  background: #ff6f6f;
+  position: relative;
+  padding: 41px 0 0 328px;
+  box-sizing: border-box;
+  margin-left: 69px;
+  color: #fff;
+}
+.section.pick .left_area > img{
+  position: absolute;
+  left: -69px;
+  top: -19px;
+}
+.section.pick .left_area .txt_area .name{
+  font-size: 40px;
+  font-weight: 500;
+}
+.section.pick .left_area .txt_area .name::after{
+  content: '';
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  margin: 22px 0 12px;
+}
+.section.pick .left_area .txt_area .subs{
+  font-size: 20px;
+  line-height: 30px;
+}
+.section.pick .left_area .btn_all{
+  display: block;
+  height: 30px;
+  font-size: 26px;
+  color: #000;
+  position: absolute;
+  bottom: 20px; 
+  right: 20px;
+}
+.section.pick .left_area .btn_all::after{
+  content: '';
+  width: 55px;
+  height: 30px;
+  display: inline-block;
+  background: url(../img/main/btn_pick_arrow.png) no-repeat center center;
+  vertical-align: middle;
+  margin: -5px 0 0 9px;
+}
+.section.pick .right_area{
+  float: right;
+  width: 380px;
+}
+.section.pick .right_area > ul > li{
+  float: left;
+  margin: 0 0 20px 20px;
+}
+.section.pick .right_area > ul > li > a{
+  display: block;
+  width: 170px;
+  height: 170px;
+  background: #f8f8f8;
+}
+.section.pick .right_area > ul > li > a img{
+  width: 100%;
+}
 
 /***** lineup *****/
-.section.lineup{}
-.section.lineup:before{}
-.section.lineup .txt_area{}
-.section.lineup .txt_area h2{}
-.section.lineup .txt_area .subs{}
-.section.lineup .txt_area .subs_1{}
-.section.lineup .lineup_list{}
+.section.lineup{
+  margin-top: 80px;
+}
+.section.lineup::before{
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 420px;
+  background: #f89828 url(../img/main/bg_lineup.jpg) no-repeat center 0;
+}
+.section.lineup .txt_area{
+  color: #fff;
+}
+.section.lineup .txt_area h2{
+  font-size: 60px;
+  font-weight: bold;
+  padding: 80px 0 17px;
+}
+.section.lineup .txt_area .subs{
+  font-size: 40px;
+  font-weight: 500;
+}
+.section.lineup .txt_area .subs_1{
+  font-size: 20px;
+  line-height: 30px;
+  padding: 25px 0 45px;
+}
+.section.lineup .lineup_list{
+  margin: 0 -20px;
+}
 .section.lineup .lineup_list:after{}
-.section.lineup .lineup_list > li{}
+.section.lineup .lineup_list > li{
+  float: left;
+  width: 50%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
 .section.lineup .lineup_list > li > a{}
-.section.lineup .lineup_list > li .info_area{}
-.section.lineup .lineup_list > li .info_area .name{}
-.section.lineup .lineup_list > li .info_area .subs{}
-.section.lineup .lineup_list > li .info_area .arr{}
-.section.lineup .lineup_list > li .info_area .arr:after {}
+.section.lineup .lineup_list > li .info_area{
+  height: 235px;
+  border: 1px solid #ddd;
+  border-top: 0;
+  padding: 30px 30px 0;
+  box-sizing: border-box;
+}
+.section.lineup .lineup_list > li .info_area .name{
+  /* display: block; */
+  display: inline-block;
+  padding-bottom: 15px;
+  font-size: 40px;
+  font-weight: 500;
+  position: relative;
+}
+.section.lineup .lineup_list > li .info_area .name::after {
+  content: '';
+  /* display: inline-block; */
+  width: 62px;
+  height: 70px;
+  background: url(../img/main/img_lineup_shape01.png) no-repeat center center;
+  position: absolute;
+  right: -55px;
+  top: 15px;
+}
+.section.lineup .lineup_list > li:nth-child(2) .info_area .name::after {
+  background-image: url(../img/main/img_lineup_shape02.png);
+  width: 71px;
+  height: 58px;
+  top: -20px;
+  right: -68px;
+}
+.section.lineup .lineup_list > li .info_area .subs{
+  font-size: 20px;
+  line-height: 30px;
+}
+.section.lineup .lineup_list > li .info_area .arr{
+  display: block;
+  font-size: 26px;
+  margin-top: 35px;
+}
+.section.lineup .lineup_list > li .info_area .arr:after {
+  content: '';
+  width: 55px;
+  height: 30px;
+  display: inline-block;
+  background: url(../img/main/btn_lineup_arrow.png) no-repeat center center;
+  vertical-align: middle;
+  margin: -5px 0 0 9px;
+}
 
 /***** link *****/
-.section.link{}
-.section.link:before{}
-.section.link:after{}
-.section.link .btn_link{}
-.section.link .btn_link:after{}
-.section.link .btn_link.type_2{}
-.section.link .btn_link.type_2:after{}
+.section.link{
+  position: relative;
+  height: 100px;
+  margin-top: 100px;
+}
+.section.link::before{
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 50%; /* 화면의 가운데 */
+  top: 0;
+  bottom: 0;
+  background: #52BE2C;
+}
+.section.link::after{
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #1078DB;
+  z-index: -1; /* ::after가 가리고 있으므로 depth 낮춰줌  */
+}
+.section.link .btn_link{
+  float: left;
+  width: 50%;
+  height: 100px;
+  background: url(../img/main/btn_link_contact.jpg) no-repeat center center;
+  position: relative;
+}
+.section.link .btn_link::after{
+  content: '';
+  display: block;
+  width: 74px;
+  height: 75px;
+  background: url(../img/main/btn_link_contact_shape.png) no-repeat center center;
+  position: absolute;
+  left: 55px;
+  top: -13px;
+}
+.section.link .btn_link.type_2{
+  background-image: url(../img/main/btn_link_store.jpg);
+}
+.section.link .btn_link.type_2::after{
+  background-image: url(../img/main/btn_link_store_shape.png);
+  width: 38px;
+  height: 42px;
+  left: 368px;
+}

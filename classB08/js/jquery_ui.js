@@ -1,6 +1,17 @@
 $(function(){
 	//메인 헤더 스크롤 이벤트
-	
+	if($(".main").length)	{	//0이 아닌경우 실행되게
+		// alert("main 체크");
+		$(window).scroll(function() {
+			// console.log("스크롤");
+			// console.log($(window).scrollTop());
+			if($(window).scrollTop() == 0) {
+				$(".header").removeClass("down");
+			} else {
+				$(".header").addClass("down");
+			}
+ 		});
+	}
 
 	//네비 열기
 	

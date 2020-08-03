@@ -1,28 +1,118 @@
 /***** common *****/
-
+.wrap {
+  min-width: 1220px;
+}
+.txt_hide {
+  /* 화면상에는 안보이지만 리더기는 읽을수 있도록 사이즈 최소로 줄임 > 그래도 선택될 수 도 있으므로 > depth를 낮춰 선택되지 않게 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -1;
+}
+.inner {
+  width: 1080px;
+  height: 100%;
+  position: relative; /* 영역안의 box들이 position으로 떠도 원래 자리에 위치되게 */
+  margin: 0 auto; /* 가운데 정렬 */
+}
+.inner::after { /* 영역안에서 float으로 떠도 영역 크기 제대로 유지하기 위해 */
+  content: '';
+  display: block;
+  clear: both;
+}
 
 /***** header *****/
-.header{}
-.header .inner{}
+.header{
+  height: 80px;
+  background: #F89828;
+  position: fixed; /* fixed로 잡으면 뜨기 때문에 밑의 영역들이 header영역만큼 위로 올라감 */
+  width: 100%; /* inner안에만 bg가 들어가는 것이 아니라 inner바깥에서도 bg가 들어야 하므로 width: 100%;주어 전체적으로 bg들게 */
+  z-index: 10; /* 밑의 영역들이 뚫고 올라올 수 있으므로 depth를 높여줘야 */
+  transition: background-color .5s; /* 스크롤 내렸을 때 자연스래 bg바뀌게 */
+}
+.header .inner{
+  width: 1220px;
+}
 
 /* 로고 */
-.header .logo a{}
+.header .logo a{
+  display: block;
+  width: 216px;
+  height: 28px;
+  background: url(../img/common/img_logo.png) no-repeat center center;
+  background-size: auto 100%; /* 세로에 맞춰 가로이미지 잘 나오게 */
+  position: absolute;
+  /* 왼쪽 모서리 기준으로 가운데 위치시킴 */
+  left: 50%;
+  top: 50%;
+  /* 이미지(box)의 절반값을 음수 마진으로 올려주면 중앙에 위치됨 > width값을 줄이거나 늘려도 항상 같은 자리에 위치 */
+  margin: -14px 0 0 -108px;
+  transition: background-color .5s; 
+}
 
 /* 네비열기버튼 */
-.header .navi_area .btn_nav{}
+.header .navi_area .btn_nav{ /* 햄버거 메뉴 */
+  width: 35px;
+  height: 26px;
+  border: 0; /* button: border有 (default) */
+  background: url(../img/common/btn_nav.png) no-repeat center center;
+  float: left;
+  margin-top: 24px; /* 대략적으로 세로 정렬 */
+  transition: all .5s; 
+}
 
 /* 장바구니버튼 */
-.header .btn_cart{}
-.header .btn_cart .bedge{}
+.header .btn_cart{
+  float: right;
+  width: 29px;
+  height: 33px;
+  border: 0;
+  background: url(../img/common/btn_shopping.png) no-repeat center center;
+  margin-top: 23px;
+  position: relative;
+  transition: background-color .5s; 
+}
+.header .btn_cart .bedge { 
+  display: block;
+  width: 26px;
+  height: 21px;
+  line-height: 21px; /* 세로 정렬 */
+  border: 2px solid #fff;
+  border-radius: 13px;
+  background: #f70c0c;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  bottom: -10px;
+  right: -13px;
+}
 
 /* 메인 헤더 스크롤 다운 */
-.header.down{}
-.header.down .logo a{}
-.header.down .navi_area .btn_nav{}
-.header.down .btn_cart{}
+.header.down{
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  box-sizing: border-box;
+}
+.header.down .logo a{
+  background-image: url(../img/common/img_logo_o.png);
+}
+.header.down .navi_area .btn_nav{
+  background-image: url(../img/common/btn_nav_b.png);
+  background-size: 100% auto; /* 이미지 꽉 차게 */
+}
+.header.down .btn_cart{
+  background-image: url(../img/common/btn_shopping_b.png);
+  background-size: 100% auto;
+}
 
 /* 네비상세 */
-.header .navi_area .navi{}
+.header .navi_area .navi{
+  display: none;
+}
 .header .navi_area .navi .btn_nav_close{}
 .header .navi_area .navi .msg{}
 .header .navi_area .navi .msg > a{}
@@ -38,31 +128,101 @@
 .header .navi_area .navi .btn_login{}
 
 /***** container *****/
-.container{}
+.container{
+  padding-top: 80px; /* 가려진 영역만큼(header가 fixed로 뜨면서 그 밑에 영역들이 위로 올라감) 밑으로 내림 */
+}
 
 /***** footer *****/
-.footer{}
+.footer{
+  background: #333;
+  color: #bbb; /* footer안에 있는 box들에게 상속된다 */
+}
 
 /* 푸터 상단영역 */
-.footer .top_area{}
-.footer .top_area .logo{}
-.footer .top_area .list_list{}
-.footer .top_area .list_list > li{}
-.footer .top_area .list_list > li > a{}
+.footer .top_area{
+  height: 87px;
+  border-bottom: 1px solid #515151;
+}
+.footer .top_area .logo{
+  float: left;
+  display: block;
+  width: 192px;
+  height: 26px;
+  background: url(../img/common/img_footer_logo.png) no-repeat center center;
+  margin-top: 31px; 
+}
+.footer .top_area .info_list{
+  float: right;
+}
+.footer .top_area .info_list > li{
+  float: left;
+}
+.footer .top_area .info_list > li > a{
+  line-height: 86px;
+  margin-left: 60px;
+  font-size: 16px;
+}
 
 /* 푸터 하단영역 */
-.footer .bottom_area{}
-.footer .bottom_area .info_area{}
+.footer .bottom_area{
+  padding: 25px 0 40px;
+}
+.footer .bottom_area .info_area{
+  float: left;
+  width: 765px;
+}
 .footer .bottom_area .info_area .info_list{}
-.footer .bottom_area .info_area .info_list > li{}
-.footer .bottom_area .info_area .txt_phone{}
+.footer .bottom_area .info_area .info_list > li{
+  float: left;
+  margin-right: 27px;
+  color: #acacac;
+  line-height: 24px;
+  font-weight: 300;
+}
+.footer .bottom_area .info_area .info_list > li:last-of-type {
+  clear: both;
+}
+.footer .bottom_area .info_area .txt_phone{
+  clear: both;
+  font-size: 16px;
+  padding: 15px 0 20px; 
+  font-weight: 300;
+}
 .footer .bottom_area .info_area .txt_phone:after{}
-.footer .bottom_area .info_area .txt_phone > dt{}
-.footer .bottom_area .info_area .txt_phone > dd{}
-.footer .bottom_area .info_area .txt_copy{}
-.footer .bottom_area .social_area{}
-.footer .bottom_area .social_area li{}
-.footer .bottom_area .social_area li .btn_social{}
-.footer .bottom_area .social_area li .btn_social.facebook{}
-.footer .bottom_area .social_area li .btn_social.instagram{}
-.footer .bottom_area .social_area li .btn_social.youtube{}
+.footer .bottom_area .info_area .txt_phone > dt{
+  float: left;
+  color: #999;
+}
+.footer .bottom_area .info_area .txt_phone > dd{
+  float: left;
+  color: #bbb;
+  margin-left: 7px;
+}
+.footer .bottom_area .info_area .txt_copy{
+  font-weight: 300;
+  margin-top: 11px;
+}
+.footer .bottom_area .social_area{
+  float: right;
+}
+.footer .bottom_area .social_area li{
+  float: left;
+  margin-left: 36px;
+}
+.footer .bottom_area .social_area li .btn_social{
+  display: block;
+  width: 19px;
+  height: 33px;
+  background: url(../img/common/icon_ft_blog.png) no-repeat center center;
+}
+.footer .bottom_area .social_area li .btn_social.facebook{
+  background-image: url(../img/common/icon_ft_fb.png);
+}
+.footer .bottom_area .social_area li .btn_social.instagram{
+  background-image: url(../img/common/icon_ft_insta.png);
+  width: 33px;
+}
+.footer .bottom_area .social_area li .btn_social.youtube{
+  background-image: url(../img/common/icon_ft_youtube.png);
+  width: 33px;
+}
