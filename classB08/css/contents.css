@@ -1,0 +1,23 @@
+/***** sub common *****/
+.location_area{}
+.location_area h2{}
+.location_area .location{}
+.location_area .location a{}
+.location_area .location a + a:before{}
+.location_area .location a.home:before{}
+
+/***** lineup *****/
+ .lineup .header{}
+ .lineup .location_area{}
+
+.section.lineup_comport{}
+.section.lineup_comport .inner{}
+.section.lineup_comport .unit + .unit{}
+.section.lineup_comport .unit .txt_area{}
+.section.lineup_comport .unit .txt_area .img{}
+.section.lineup_comport .unit .txt_area .name{}
+.section.lineup_comport .unit .txt_area .subs{}
+.section.lineup_comport .unit .img_area{}
+.section.lineup_comport .unit:nth-child(2n) .txt_area{}
+.section.lineup_comport .unit:nth-child(2n) .txt_area .img{}
+.section.lineup_comport .unit:nth-child(2n) .img_area{}

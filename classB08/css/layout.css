@@ -1,0 +1,68 @@
+/***** common *****/
+
+
+/***** header *****/
+.header{}
+.header .inner{}
+
+/* 로고 */
+.header .logo a{}
+
+/* 네비열기버튼 */
+.header .navi_area .btn_nav{}
+
+/* 장바구니버튼 */
+.header .btn_cart{}
+.header .btn_cart .bedge{}
+
+/* 메인 헤더 스크롤 다운 */
+.header.down{}
+.header.down .logo a{}
+.header.down .navi_area .btn_nav{}
+.header.down .btn_cart{}
+
+/* 네비상세 */
+.header .navi_area .navi{}
+.header .navi_area .navi .btn_nav_close{}
+.header .navi_area .navi .msg{}
+.header .navi_area .navi .msg > a{}
+.header .navi_area .navi .navi_list{}
+.header .navi_area .navi .navi_list{}
+.header .navi_area .navi .navi_list > li .depth_1{}
+.header .navi_area .navi .navi_list > li .sub{}
+.header .navi_area .navi .navi_list > li:hover .sub{}
+.header .navi_area .navi .navi_list > li .sub > li .depth_2{}
+.header .navi_area .navi .social_list{}
+.header .navi_area .navi .social_list > li{}
+.header .navi_area .navi .social_list > li .btn_social{}
+.header .navi_area .navi .btn_login{}
+
+/***** container *****/
+.container{}
+
+/***** footer *****/
+.footer{}
+
+/* 푸터 상단영역 */
+.footer .top_area{}
+.footer .top_area .logo{}
+.footer .top_area .list_list{}
+.footer .top_area .list_list > li{}
+.footer .top_area .list_list > li > a{}
+
+/* 푸터 하단영역 */
+.footer .bottom_area{}
+.footer .bottom_area .info_area{}
+.footer .bottom_area .info_area .info_list{}
+.footer .bottom_area .info_area .info_list > li{}
+.footer .bottom_area .info_area .txt_phone{}
+.footer .bottom_area .info_area .txt_phone:after{}
+.footer .bottom_area .info_area .txt_phone > dt{}
+.footer .bottom_area .info_area .txt_phone > dd{}
+.footer .bottom_area .info_area .txt_copy{}
+.footer .bottom_area .social_area{}
+.footer .bottom_area .social_area li{}
+.footer .bottom_area .social_area li .btn_social{}
+.footer .bottom_area .social_area li .btn_social.facebook{}
+.footer .bottom_area .social_area li .btn_social.instagram{}
+.footer .bottom_area .social_area li .btn_social.youtube{}
