@@ -1,3 +1,5 @@
+var isIos = /iPhone|iPad|iPod/i.test(navigator.userAgent) ? true : false;
+
 $(function() {
   //동적으로 html추가되게 > append
   $(".txt_area input").keypress(function(e) {  //input태그에 key누르면 동작
@@ -37,9 +39,24 @@ $(function() {
           },500)
         },100);
         
-        
       } 
   }); 
+
+  //아이폰 처리
+  if(isIos) {
+    $(".txt_area input").focusin(function() {
+      setTimeout(function() {
+        $(".chat_wrap").addClass("keypad_on");
+        $("html").stop().animate({
+          scrollTop: 0
+        },10)
+      },30)
+      $(".txt_area input").focusout(function(){
+        $("chat_wrap").removeClass("keypad on");
+      })
+    })
+  }
+
 });
 
 //현재시간을 알아내고 값을 반환하는 함수(function)
