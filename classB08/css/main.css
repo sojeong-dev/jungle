@@ -22,14 +22,14 @@
   background: #f89828;
   z-index: -1;
 }
-.section.visual .bx-wrapper {}
-.section.visual .bx-wrapper .bx-viewport {}
-.section.visual .bx-wrapper .bx-controls-direction a {}
-.section.visual .bx-wrapper .bx-controls-direction a.bx-next {}
-.section.visual .bx-wrapper .bx-controls-direction a.bx-prev {}
-.section.visual .bx-wrapper .bx-pager {}
-.section.visual .bx-wrapper .bx-pager.bx-default-pager a {}
-.section.visual .bx-wrapper .bx-pager.bx-default-pager a.active {}
+.section.visual .bx-wrapper {margin:50px auto 0;width:100%;height:800px;overflow:hidden; position: relative;}
+.section.visual .bx-wrapper .bx-viewport {min-width:1528px;left:0;border:0;background:transparent;box-shadow:0 0 0;}
+.section.visual .bx-wrapper .bx-controls-direction a {top:0;margin-top:0;width:40px;height:580px;z-index:2;position: absolute; display: block; text-indent: -9999px}
+.section.visual .bx-wrapper .bx-controls-direction a.bx-next {right:50%;margin-right:-600px;background:url(../img/main/btn_slide_main_next.png) right center no-repeat;}
+.section.visual .bx-wrapper .bx-controls-direction a.bx-prev {left:50%;margin-left:-600px;background:url(../img/main/btn_slide_main_prev.png) left center no-repeat;}
+.section.visual .bx-wrapper .bx-pager {padding-top:0;bottom:148px;}
+.section.visual .bx-wrapper .bx-pager.bx-default-pager a {margin:0 5px;width:20px;height:20px; border-radius: 100%; border:4px solid #fff; background: #CFCFCF; box-sizing: border-box;}
+.section.visual .bx-wrapper .bx-pager.bx-default-pager a.active {border-color: #F89828; background: #fff}
 
 /***** market *****/
 .section.market{}
@@ -90,10 +90,10 @@
   bottom: -9px;
   right: 234px;
 }
-.section.market .bx-wrapper .bx-viewport{}
-.section.market .bx-wrapper .bx-pager {}
-.section.market .bx-wrapper .bx-pager.bx-default-pager a {}
-.section.market .bx-wrapper .bx-pager.bx-default-pager a.active {}
+.section.market .bx-wrapper .bx-viewport {border:0;background:transparent;box-shadow:0 0 0;}
+.section.market .bx-wrapper .bx-pager {padding-top:0; bottom: 83px; width: 228px;}
+.section.market .bx-wrapper .bx-pager.bx-default-pager a {margin:0 5px;width:20px;height:20px; border-radius: 100%; border:4px solid #54D3D4; background: #2A8291; box-sizing: border-box;}
+.section.market .bx-wrapper .bx-pager.bx-default-pager a.active {border-color: #333; background: transparent}
 
 /***** pick *****/
 .section.pick{}

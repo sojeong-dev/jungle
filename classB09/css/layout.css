@@ -1,0 +1,139 @@
+/* ****common**** */
+body {
+  background-color: #74cafc;
+}
+.inner {
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* ****header**** */
+
+/* ****container**** */
+.container .inner {
+  background-color: #fff;
+  box-shadow: 23px 23px 13px rgba(39, 166, 240, .25);
+  overflow: hidden; /* 겹치는 그림자 부분 삭제 */
+  text-align: center;
+  padding-bottom: 125px;
+}
+
+.container .inner .img {
+  box-shadow: 23px 23px 13px rgba(39, 166, 240, .25);
+}
+.container .inner .step_list {
+  margin: 60px 0 30px;
+}
+.container .inner .step_list > li {
+  display: inline-block;
+  width: 209px;
+  height: 209px;
+  background: url(../img/img_circle_01.png) no-repeat;
+  vertical-align: middle;
+  padding-top: 82px;
+  box-shadow: border-box;
+}
+.container .inner .step_list > li + li {
+  margin-left: 75px;
+}
+.container .inner .step_list > li + li::before {
+  content: '';
+  display: block;
+  width: 31px;
+  height: 40px;
+  background: url(../img/img_arr.png) no-repeat;
+  position: absolute;
+  margin-left: -53px;
+}
+.container .inner .step_list > li > strong {
+  font-size: 26px;
+  font-weight: 800; /* bold ≒ 700, extra-bold ≒ 800 */
+}
+.container .inner .step_list > li > p {
+  /* 나눔스퀘어: 17px이상 부드럽게 나옴 > img마냥 
+but) 16px이하는 짜글짜글함 > 살짝 기우려서 부드럽게 만듦(핵) */
+  /* font-size: 소수점x(버림) */
+  font-size: 16px;
+  transform: skew(-0.05deg);
+  font-weight: bold;
+  color: #3f3f3f;
+  line-height: 21px;
+  margin-top: 8px;
+}
+.container .inner .txt_help {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 800;
+  color: #666;
+}
+
+/* ****footer**** */
+.footer {
+  position: relative;
+  height: 87px;
+  padding-bottom: 85px;
+  min-width: 960px; /* 혼자 줄어들지 않게 */
+}
+.footer::before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 45px;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #009CFF;
+  box-shadow: 23px 23px 13px rgba(39, 166, 240, .25);
+}
+.footer .btn_submit {
+  display: block;
+  width: 302px;
+  height: 142px;
+  line-height: 116px;
+  text-align: center;
+  background: #FF577F;
+  font-size: 30px;
+  font-weight: 800;
+  color: #fff;
+  border: 13px solid #fff;
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  margin-left: -151px;
+  top: -48px;
+  box-shadow: 23px 23px 13px rgba(39, 166, 240, .25);
+}
+
+@media all and (max-width: 768px) {
+  .inner {
+    width: auto;
+  }
+  .header .inner > img {
+    width: 100%;
+  }
+  .container .inner .img {
+    width: 100%;
+  }
+  .container .inner .step_list > li {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+  }
+  .container .inner .step_list > li + li {
+    margin-left: auto;
+    margin-top: 75px;
+  } 
+  .container .inner .step_list > li + li::before {
+    transform: rotate(90deg);
+    top: -103px;
+    left: 50%;
+    margin-left: -15px;
+  }
+  .container .inner .txt_help {
+    padding: 0 20px;
+  }
+  .footer {
+    min-width: auto;
+  }
+
+}
