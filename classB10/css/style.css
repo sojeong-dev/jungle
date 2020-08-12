@@ -1,0 +1,209 @@
+/* common */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #d5dee5;
+}
+.inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+.section {
+  position: relative;
+}
+
+/* fullpage navigation */
+#fp-nav > ul > li {
+  position: relative;
+  text-align: right;
+  margin-bottom: 1px;
+} 
+#fp-nav > ul > li > a {
+  display: block;
+} 
+#fp-nav > ul > li > a > span {
+  display: inline-block; /* 내용만큼 위치 확보하기 위해 */
+  background-color: #09131b;
+  color: #fff;
+  padding: 5px 10px 5px 20px;
+  font-size: 13px;
+  transform: translateX(calc(100% - 20px)); /* 왼쪽에 20px 남기고 들어가게 */
+  transition: transform .5s; /* 애니메이션 from부분(0%)에 transition줘야 잘들음 */
+} 
+#fp-nav > ul > li.active > a > span {
+  transform: translateX(0); /* 초기값인 0 줘서 들어갔던 li 나오게 */
+}
+
+/* MAIN */
+/* 메인 메뉴 */
+#section0 .wrap_link {
+  text-align: center;
+  position: absolute;
+  width: 100%; /* 안에 들은 글이 가운데 위치하게  */
+  top: 50%;
+  left: 0;
+  margin-top: -195px;
+}
+#section0 .wrap_link > div {
+  height: 130px;
+  overflow: hidden; /* a태그 범위 영역 서로 침범하지 않게(위아래로) */
+}
+#section0 .wrap_link > div > a {
+  color: #fff;
+  opacity: .4; /* content 투명하게 > 글씨 투명하게 */
+  font-weight: bold;
+  font-size: 130px;
+  line-height: 130px;
+  /* border: 1px solid red; */
+}
+#section0 .wrap_link > div > a:hover {
+  opacity: 1;
+}
+/* 메인 배경 */
+#section0 .wrap_bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden; /* 혹시라도 다른 section의 영역 넘어가지 않게 */
+}
+#section0 .wrap_bg .bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(../img/img_main_01.jpg) no-repeat center center;
+  background-size: cover; /* 가로 세로 꽉채우게 > 비율 안깨지게끔 */
+  opacity: 0; /* 안보였다가 나오게(fade-in > fade-out) */
+  transform: scale(1); /* 확대되게 */
+  transition: all .3s;
+}
+#section0 .wrap_bg .bg:nth-child(2) {
+  background-image: url(../img/img_main_02.jpg);
+}
+#section0 .wrap_bg .bg:nth-child(3) {
+  background-image: url(../img/img_main_03.jpg);
+}
+#section0 .wrap_bg.select_1 .bg:nth-child(1),
+#section0 .wrap_bg.select_2 .bg:nth-child(2),
+#section0 .wrap_bg.select_3 .bg:nth-child(3) {
+  opacity: 1;
+  transform: scale(1.1); 
+}
+
+/* 메인 오브젝트 */
+#section0 .ico {
+  /* display: block; */
+  width: 200px;
+  height: 200px;
+  background: url(../img/ico_01.png) no-repeat center center;
+  background-size: auto 100%; /* 세로 기준으로 꽉 채우게 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transition: transform 1s ease-out;
+}
+#section0 .ico.ico_1 {
+  margin: -310px 0 0 330px;
+}
+#section0 .ico.ico_2 {
+  margin: 0 0 0 -890px;
+  top: auto;
+  bottom: -220px;
+  background-image: url(../img/ico_02.png);
+  width: 556px;
+  height: 376px;
+}
+
+/* PROFILE */
+#section1 .wrap_link {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  top: 50%;
+  height: 60px;
+  margin-top: -30px;
+}
+#section1 .wrap_link > div {
+  display: inline-block;
+}
+#section1 .wrap_link > div > a {
+  font-size: 80px;
+  font-weight: bold;
+  vertical-align: middle; /* height가 더 높은 inline-block에 줘야  vertical-align: middle; 들음2 */
+}
+#section1 .wrap_link > div > a:hover {
+  color: #fff;
+}
+#section1 .wrap_link > div + div::before {
+  content: '';
+  display: inline-block;
+  width: 80px;
+  height: 5px;
+  background-color: #000;
+  /* vertical-align: middle; inline-block의 모든 요소들이 가운데 정렬되야  vertical-align: center; 들음 > 둘 다 주거나1 */
+  margin: 0 20px;
+}
+
+/* profile 배경 */
+#section1 .wrap_bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+#section1 .wrap_bg .bg {
+  height: 100px;
+}
+#section1 .wrap_bg.select_1 .bg {
+  background: url(../img/section1_txt_0.png) repeat-x left center;
+  animation: ani-bg1 6s linear infinite;
+}
+@keyframes ani-bg1 {
+  0% {background-position-x: 0;}
+  100% {background-position-x: -690px;}
+}
+#section1 .wrap_bg.select_1 .bg.reverse {
+  animation-name: ani-bg1-reverse;
+}
+@keyframes ani-bg1-reverse {
+  0% {background-position-x: 0;}
+  100% {background-position-x: 690px;}
+}
+
+#section1 .wrap_bg.select_2 .bg {
+  background-image: url(../img/section1_txt_1.png);
+  animation: ani-bg2 6s linear infinite;
+}
+@keyframes ani-bg2 {
+  0% {background-position-x: 0;}
+  100% {background-position-x: -634px;}
+}
+#section1 .wrap_bg.select_2 .bg.reverse {
+  animation-name: ani-bg2-reverse;
+}
+@keyframes ani-bg2-reverse {
+  0% {background-position-x: 0;}
+  100% {background-position-x: 634px;}
+}
+
+#section1 .wrap_bg.select_3 .bg {
+  background-image: url(../img/section1_txt_2.png);
+  animation: ani-bg3 6s linear infinite;
+}
+@keyframes ani-bg3 {
+  0% {background-position-x: 0;}
+  100% {background-position-x: -783px;}
+}
+#section1 .wrap_bg.select_3 .bg.reverse {
+  animation-name: ani-bg3-reverse;
+}
+@keyframes ani-bg3-reverse {
+  0% {background-position-x: 0;}
+  100% {background-position-x: 783px;}
+}
