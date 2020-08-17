@@ -207,3 +207,183 @@ body {
   0% {background-position-x: 0;}
   100% {background-position-x: 783px;}
 }
+
+/* skill */
+#section2 .wrap_link {
+  position: absolute;
+  bottom: 50px;
+  right: 150px;
+  text-align: right;
+}
+#section2 .wrap_link > div > a {
+  font-size: 80px;
+  font-weight: bold;
+  color: #2d3a42;
+}
+#section2 .wrap_link > div > a:hover {
+  color: #fff;
+}
+#section2 .wrap_wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50px;
+  bottom: 0;
+  /* background-color: #999; */
+}
+#section2 .wrap_wave .inner {
+  width: 100%;
+  height: 100%;
+}
+#section2 .wrap_wave .inner > .unit {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #98d3f3;
+  transition: transform 1s ease-in-out;
+  transform: translateY(100%);
+}
+
+#section2 .wrap_wave .wave::before,
+#section2 .wrap_wave .wave::after { /* 파도치는 것처럼 보이게 > wave여러게 겹쳐서 */
+  content: '';
+  display: block;
+  width: 4800px;
+  height: 50px;
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background: url(../img/bg_wave.png) 0 0;
+  background-size: 2400px 50px;
+  opacity: .1;
+  animation: ani-wave1 5s linear infinite;
+}
+@keyframes ani-wave1 {
+  /* 이미지 크기(width)와 잘 맞춰야 끊기지 않고 파도 치는 것처럼 보이게 됨 */
+  0% {transform: translateX(-500px);}
+  100% {transform: translateX(-2900px);}
+}
+
+#section2 .wrap_wave .wave::after { 
+  animation: ani-wave2 7s linear infinite;
+}
+@keyframes ani-wave2 {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-2400px);}
+}
+
+#section2 .wrap_wave .num { /* 숫자 둥둥 떠있게 */
+  font-size: 80px;
+  color: #fff;
+  opacity: .5;
+  margin-left: 30px;
+  animation: ani-num 3s infinite;
+  display: inline-block;
+}
+@keyframes ani-num {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(15px);}
+  100% {transform: translateY(0);}
+}
+#section3 .slick-slide {
+  padding: 0 20px;
+}
+#section3 .slick-slide img {
+  width: 860px;
+  height: 520px;
+}
+#section3 .wrap_txt {
+  /* border: 1px solid red; */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 224px;
+}
+#section3 .wrap_txt > ul {
+  height: 95px;
+  overflow: hidden;
+  position: relative;
+}
+#section3 .wrap_txt > ul > li {
+  font-size: 86px;
+  font-weight: bold;
+  position: absolute;
+  top: 95px;
+  width: 100%;
+  transition: top .5s;
+}
+#section3 .wrap_txt > ul > li.on {
+  top: 0;
+}
+#section3 .wrap_photo {
+  cursor: none;
+}
+#section3 .wrap_photo .cursor {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: #f00;
+  border-radius: 100%;
+  transform: scale(0);
+  transition: transform .3s;
+  position: absolute;
+  pointer-events: none;
+}
+#section3 .wrap_photo:hover .cursor {
+  transform: scale(1);
+}
+#section3 .wrap_photo:active .cursor {
+  transform: scale(2);
+}
+
+/* contact */
+#section4 .wrap_type {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -180px 0 0 -500px;
+}
+#section4 .wrap_type .wrap_type_inner {
+  position: relative;
+}
+
+#section4 .wrap_input {
+  position: absolute;
+  left: 50%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #272d39;
+}
+#section4 .wrap_input > form {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin: -80px 0 0 30px;
+}
+#section4 .wrap_input .group {
+  position: relative;
+  margin-bottom: 45px;
+}
+#section4 .wrap_input input {
+  font-size: 18px;
+  padding: 10px 0;
+  display: block;
+  width: 300px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #757575;
+  color: #fff;
+  outline: none;
+}
+#section4 .wrap_input label {
+  color: #fff;
+  font-size: 18px;
+  position: absolute;
+  left: 0;
+  top: -20px;
+}

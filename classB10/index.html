@@ -9,11 +9,13 @@
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/fullpage.css">
+		<link rel="stylesheet" type="text/css" href="css/slick.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.fullPage.min.js"></script>
 		<script src="js/parallax.min.js"></script>
+		<script src="js/slick.js"></script>
 		<script src="js/script_ui.js"></script>
   </head>
   <body>
@@ -79,17 +81,79 @@
 
 			<!-- section2 (skill) -->
 			<div class="section" id="section2">
-				
+				<div class="wrap_wave">
+					<div class="inner">
+						<div class="unit">
+							<div class="wave"></div>
+							<div class="num">
+								<strong>100</strong>%
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="inner">
+					<div class="wrap_link">
+						<div>
+							<a href="javascript:">html</a>
+						</div>
+						<div>
+							<a href="javascript:">css</a>
+						</div>
+						<div>
+							<a href="javascript:">javascript</a>
+						</div>
+						<div>
+							<a href="javascript:">photoshop</a>
+						</div>
+					</div>
+				</div>
 			</div>
 
 			<!-- section3 (portfolio) -->
 			<div class="section" id="section3">
-				
+				<div class="wrap_photo">
+					<ul>
+						<li><img src="img/CoseCountry_Horizontal-Big.jpg" alt="포트폴리오 첫번째 이미지"></li>
+						<li><img src="img/DeziHorizontalSmall.jpg" alt="포트폴리오 두번째 이미지"></li>
+						<li><img src="img/Homepage-Full.jpg" alt="포트폴리오 세번째 이미지"></li>
+						<li><img src="img/P-listing-horizontal-small.jpg"alt="포트폴리오 네번째 이미지"></li>	
+					</ul>
+					<span class="cursor"></span> 	<!-- 슬라이드 이미지에서만 커서 작동하게 -->
+				</div>
+				<div class="wrap_txt">
+					<ul>
+						<li class="on">FIRST</li>
+						<li>SECOND</li>
+						<li>THIRD</li>
+						<li>FOURTH</li>
+					</ul>
+				</div>
 			</div>
 
 			<!-- section4 (contact) -->
 			<div class="section" id="section4">
-					
+					<!-- 애니메이션 영역 -->
+					<div class="wrap_type">
+						<div class="wrap_type_inner"></div>
+					</div>
+					<!-- input 영역 -->
+					<div class="wrap_input">
+						<!-- data를 넘겨주는 부분이기 때문에 > form태그를 사용하는것이 유용 -->
+						<form>
+							<div class="group">
+								<input type="text">
+								<span class="highlight"></span>
+								<span class="bar"></span>
+								<label>Name</label>
+							</div>
+							<div class="group">
+								<input type="text">
+								<span class="highlight"></span>
+								<span class="bar"></span>
+								<label>Email</label>
+							</div>
+						</form>
+					</div>
 			</div>
 			
 	</div>
