@@ -16,6 +16,7 @@
 		<script src="js/jquery.fullPage.min.js"></script>
 		<script src="js/parallax.min.js"></script>
 		<script src="js/slick.js"></script>
+		<script src="js/imagesloaded.pkgd.js"></script>
 		<script src="js/script_ui.js"></script>
   </head>
   <body>
@@ -28,7 +29,7 @@
 					<div class="bg"></div>
 				</div>
 				<div class="inner">
-					<div class="wrap_link">
+					<div class="wrap_link ani_obj">
 						<div>
 							<a href="javacript:">PUBLISHING</a>
 						</div>
@@ -67,13 +68,13 @@
 				<div class="inner">
 					<div class="wrap_link">
 						<div>
-							<a href="javascript:">NAME</a>
+							<a href="javascript:" class="ani_obj">NAME</a>
 						</div>
 						<div>
-							<a href="javascript:">JOB</a>
+							<a href="javascript:" class="ani_obj d1">JOB</a>
 						</div>	
 						<div>
-							<a href="javascript:">PLACE</a>
+							<a href="javascript:" class="ani_obj d2">PLACE</a>
 						</div>
 					</div>
 				</div>
@@ -92,7 +93,7 @@
 					</div>
 				</div>
 				<div class="inner">
-					<div class="wrap_link">
+					<div class="wrap_link ani_obj">
 						<div>
 							<a href="javascript:">html</a>
 						</div>
@@ -111,7 +112,7 @@
 
 			<!-- section3 (portfolio) -->
 			<div class="section" id="section3">
-				<div class="wrap_photo">
+				<div class="wrap_photo ani_obj">
 					<ul>
 						<li><img src="img/CoseCountry_Horizontal-Big.jpg" alt="포트폴리오 첫번째 이미지"></li>
 						<li><img src="img/DeziHorizontalSmall.jpg" alt="포트폴리오 두번째 이미지"></li>
@@ -134,19 +135,21 @@
 			<div class="section" id="section4">
 					<!-- 애니메이션 영역 -->
 					<div class="wrap_type">
-						<div class="wrap_type_inner"></div>
+						<div class="wrap_type_inner">
+							<!-- <span></span> -->
+						</div>
 					</div>
 					<!-- input 영역 -->
 					<div class="wrap_input">
 						<!-- data를 넘겨주는 부분이기 때문에 > form태그를 사용하는것이 유용 -->
 						<form>
-							<div class="group">
+							<div class="group ani_obj">
 								<input type="text">
 								<span class="highlight"></span>
 								<span class="bar"></span>
 								<label>Name</label>
 							</div>
-							<div class="group">
+							<div class="group ani_obj d1">
 								<input type="text">
 								<span class="highlight"></span>
 								<span class="bar"></span>
@@ -155,9 +158,30 @@
 						</form>
 					</div>
 			</div>
+
+			<!-- css에 담기거나 로딩이 오래걸리는 이미지를 먼저 로드시켜 나오게 -->
+			<div class="wrap_img">
+				<img src="img/CoseCountry_Horizontal-Big.jpg" />
+				<img src="img/DeziHorizontalSmall.jpg" />
+				<img src="img/Homepage-Full.jpg" />
+				<img src="img/ico_01.png" />
+				<img src="img/ico_02.png" />
+				<img src="img/img_main_01.jpg" />
+				<img src="img/img_main_02.jpg" />
+				<img src="img/img_main_03.jpg" />
+				<img src="img/P-listing-horizontal-small.jpg" />
+				<img src="img/section1_txt_0.png" />
+				<img src="img/section1_txt_1.png" />
+				<img src="img/section1_txt_2.png" />
+				<img src="img/bg_main.png" />
+				<img src="img/bg_wave.png" />
+			</div>
 			
 	</div>
 
+	<div class="wrap_loading">
+		<span>0</span>
+	</div>
 	
 	
   </body>

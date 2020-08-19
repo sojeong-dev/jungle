@@ -1,9 +1,29 @@
 $(function() {
-  init();
-
+  //로딩
+  var load_img = 0;
+  var total_img = 18;
+  $("body").css({"overflow":"hidden"}); //브라우저 스크롤 막음
+  $("#fullpage").imagesLoaded().done(function() {
+    console.log("로딩완료");
+    //로딩 완료
+    $(".wrap_loading").addClass("on"); 
+    setTimeout(function() {
+    $(".wrap_loading").remove();
+    }, 700);
+    $("body").css({"overflow":"auto"});
+    init();
+  }).progress(function(idx, image) {
+    //프리 로드
+    // console.log(image);
+    load_img++;
+    // console.log(Math.round(load_img/total_img * 100));  //반올림
+    var percent = Math.round(load_img/total_img * 100);
+    $(".wrap_loading > span").css({"width":percent + "%"}).text(percent);
+  });
+  // init();
 });
 
-//기본적으로 쓰는 script
+//기본적으로 쓰는 script  //모든 스크립트가 실행되게
 function init() { //초기화
 
   /* use jquery fullpage */
@@ -21,6 +41,9 @@ function init() { //초기화
     //해당 화면에서만 패럴럭스 제어하기 위해
     onLeave: function(index, nextIndex, direction) {
       scrollFn(nextIndex);
+    },
+    afterLoad:function(name, index, direction) {
+      $(".section").eq(index - 1).addClass("on");
     }
   });  
 
@@ -129,6 +152,29 @@ function init() { //초기화
 
   }
 
-  
+  /* contact */
+  $("#section4 .wrap_input input").on("textInput", function(e) {
+    // console.log(e.originalEvent.data); //키보드 정보 받아옴(한글)
+
+    // $("#section4 .wrap_type_inner > span").text(e.originalEvent.data)
+    //   .addClass("ani")
+    //   .on('animationend',function() {
+    //     $(this).removeClass("ani");
+    //   });
+
+    var c1 = Math.floor(Math.random() * 256); //Math.random: 랜덤값을 구함
+    var c2 = Math.floor(Math.random() * 256); //Math.floor: 소수점을 버림(정수)
+    var c3 = Math.floor(Math.random() * 256);
+    // console.log(c1, c2, c3);
+
+    var rn = Math.floor(Math.random() * 4);
+    console.log(rn);
+
+    $("<span style='color:rgb(" + c1 + "," + c2 + "," + c3 + ")'>"+ e.originalEvent.data + "</span>").appendTo($("#section4 .wrap_type_inner"))
+    .addClass("ani"+ rn +"")
+    .on('animationend',function() {
+      $(this).remove();
+    });
+  });
 
 };//init()
