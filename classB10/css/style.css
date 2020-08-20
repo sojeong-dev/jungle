@@ -566,6 +566,8 @@ body {
   transition-delay: .9s;
 }
 
+/* 높이 많이 잡고 있는 오류 해결 */
+#fullpage img{width: 10px;}
 
 
 
